@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeWere - The AI Assistant for Your Family</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Lighter gray for the body */
+        }
+        .chat-bubble-assistant {
+            background-color: #EEF2FF; /* Indigo 50 */
+            color: #4338CA; /* Indigo 700 */
+            border-radius: 20px 20px 20px 5px;
+            padding: 1rem 1.5rem;
+            max-width: 80%;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+        .chat-bubble-user {
+            background-color: #F3F4F6; /* Gray 100 */
+            color: #1F2937; /* Gray 800 */
+            border-radius: 20px 20px 5px 20px;
+            padding: 1rem 1.5rem;
+            max-width: 80%;
+            align-self: flex-end;
+        }
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        .avatar-assistant {
+            background-color: #6366F1; /* Indigo 500 */
+            color: white;
+        }
+        .avatar-user {
+            background-color: #D1D5DB; /* Gray 300 */
+            color: #1F2937; /* Gray 800 */
+        }
+        /* Animation styles */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+    </style>
+</head>
+<body class="text-gray-900 antialiased">
+
+    <header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm z-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" class="text-2xl font-bold text-indigo-600">WeWere</a>
+                <a href="#cta" class="hidden sm:inline-block bg-indigo-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors">Join Early Access</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="min-h-screen pt-20 flex flex-col justify-center items-center text-center px-6 bg-white">
+             <div class="max-w-4xl mx-auto">
+                <div class="chat-bubble-assistant max-w-lg mx-auto scroll-animate">
+                    <div class="avatar avatar-assistant">WW</div>
+                    <p class="text-xl md:text-2xl font-medium">👋 Hi, I’m WeWere — your Family AI Assistant.</p>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold mt-8 scroll-animate delay-100">
+                    Stop juggling apps. <br>
+                    <span class="text-indigo-600">Start connecting.</span>
+                </h1>
+                <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-600 scroll-animate delay-200">
+                    WeWere is the first chat-based AI Family Assistant — no complicated dashboards, no endless buttons, just one natural interface: conversation. Families simply speak or type, and WeWere takes care of the rest — remembering notes, syncing calendars, managing family health, planning trips, and even learning family routines over time.
+                </p>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 lg:py-28 px-6 bg-gray-50">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold scroll-animate">One Chat for Everything</h2>
+                    <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto scroll-animate delay-100">Each feature is designed to feel like a simple conversation.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature Card: Notes -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg space-y-4 scroll-animate delay-200">
+                         <h3 class="font-bold text-lg flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-pink-500"></span>Family Notes & Ideas</h3>
+                         <div class="space-y-3 text-sm">
+                            <div class="flex justify-end items-center gap-2"><div class="bg-blue-100 rounded-lg p-2">Save note: Barbara is allergic to strawberries.</div><div class="avatar-user text-xs w-6 h-6 flex items-center justify-center rounded-full">M</div></div>
+                            <div class="flex justify-end items-center gap-2"><div class="bg-blue-100 rounded-lg p-2">Does Barbara have any allergies?</div><div class="avatar-user text-xs w-6 h-6 flex items-center justify-center rounded-full">D</div></div>
+                            <div class="flex items-center gap-2"><div class="avatar-assistant text-xs w-6 h-6 flex items-center justify-center rounded-full">WW</div><div class="bg-gray-100 rounded-lg p-2">✅ Yes, strawberries.</div></div>
+                        </div>
+                    </div>
+                    <!-- Feature Card: Calendar -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg space-y-4 scroll-animate delay-300">
+                         <h3 class="font-bold text-lg flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-red-400"></span>Shared Calendar & Reminders</h3>
+                         <div class="space-y-3 text-sm">
+                            <div class="flex justify-end items-center gap-2"><div class="bg-blue-100 rounded-lg p-2">Don't forget Varvara's flute lesson tomorrow.</div><div class="avatar-user text-xs w-6 h-6 flex items-center justify-center rounded-full">U</div></div>
+                            <div class="flex items-center gap-2"><div class="avatar-assistant text-xs w-6 h-6 flex items-center justify-center rounded-full">WW</div><div class="bg-gray-100 rounded-lg p-2">🗓️ Got it. I'll remind everyone tomorrow morning.</div></div>
+                        </div>
+                    </div>
+                    <!-- Feature Card: Family Health -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg space-y-4 scroll-animate delay-200">
+                         <h3 class="font-bold text-lg flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-red-500"></span>Family Health</h3>
+                         <div class="space-y-3 text-sm">
+                            <div class="flex justify-end items-center gap-2"><div class="bg-blue-100 rounded-lg p-2">Upload Varvara's latest blood test results.</div><div class="avatar-user text-xs w-6 h-6 flex items-center justify-center rounded-full">U</div></div>
+                            <div class="flex items-center gap-2"><div class="avatar-assistant text-xs w-6 h-6 flex items-center justify-center rounded-full">WW</div><div class="bg-gray-100 rounded-lg p-2">✅ Done. I've analyzed the results and compared them to her previous records.</div></div>
+                            <div class="flex items-center gap-2"><div class="avatar-assistant text-xs w-6 h-6 flex items-center justify-center rounded-full">WW</div><div class="bg-yellow-100 text-yellow-800 rounded-lg p-2">⚠️ Her iron levels are lower than last time — consider checking with a doctor.</div></div>
+                        </div>
+                    </div>
+                    <!-- Feature Card: Trip Planning -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg space-y-4 scroll-animate">
+                         <h3 class="font-bold text-lg flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-cyan-400"></span>Trip & Activity Planning</h3>
+                         <div class="space-y-3 text-sm">
+                            <div class="flex justify-end items-center gap-2"><div class="bg-blue-100 rounded-lg p-2">Plan a weekend in Lake Tahoe.</div><div class="avatar-user text-xs w-6 h-6 flex items-center justify-center rounded-full">U</div></div>
+                            <div class="flex items-center gap-2"><div class="avatar-assistant text-xs w-6 h-6 flex items-center justify-center rounded-full">WW</div><div class="bg-gray-100 rounded-lg p-2">✅ Hotels, activities, and a schedule are ready in your calendar.</div></div>
+                        </div>
+                    </div>
+                    <!-- Feature Card: Adaptive Learning -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg space-y-4 scroll-animate delay-100">
+                         <h3 class="font-bold text-lg flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-yellow-400"></span>Adaptive Learning</h3>
+                         <div class="space-y-3 text-sm">
+                            <div class="flex items-center gap-2"><div class="avatar-assistant text-xs w-6 h-6 flex items-center justify-center rounded-full">WW</div><div class="bg-gray-100 rounded-lg p-2">The more you use me, the better I understand your family's communication style and routines.</div></div>
+                        </div>
+                    </div>
+                    <!-- Feature Card: Shopping -->
+                    <div class="bg-white p-6 rounded-2xl shadow-lg space-y-4 scroll-animate delay-200">
+                         <h3 class="font-bold text-lg flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-gray-400"></span>Shopping & To-Do Lists</h3>
+                         <div class="space-y-3 text-sm">
+                            <div class="flex justify-end items-center gap-2"><div class="bg-blue-100 rounded-lg p-2">Add milk and bread to the shopping list.</div><div class="avatar-user text-xs w-6 h-6 flex items-center justify-center rounded-full">U</div></div>
+                            <div class="flex items-center gap-2"><div class="avatar-assistant text-xs w-6 h-6 flex items-center justify-center rounded-full">WW</div><div class="bg-gray-100 rounded-lg p-2">✅ Done. I've added them to the shared list.</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Benefits Section -->
+        <section id="benefits" class="py-20 lg:py-28 px-6 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold scroll-animate">Your All-in-One Family Advantage</h2>
+                    <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto scroll-animate delay-100">We deliver tangible benefits that simplify daily life.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-8 rounded-2xl text-center scroll-animate delay-200">
+                        <h3 class="text-xl font-bold">🧠 One Family Brain</h3>
+                        <p class="mt-2 text-gray-600">No lost notes, all synced.</p>
+                    </div>
+                     <div class="bg-gray-50 p-8 rounded-2xl text-center scroll-animate delay-300">
+                        <h3 class="text-xl font-bold">⏰ Stress-Free Organization</h3>
+                        <p class="mt-2 text-gray-600">Reminders always reach the right person.</p>
+                    </div>
+                     <div class="bg-gray-50 p-8 rounded-2xl text-center scroll-animate">
+                        <h3 class="text-xl font-bold">❤️ Proactive Health</h3>
+                        <p class="mt-2 text-gray-600">Secure history, insights, and proactive health nudges.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-2xl text-center scroll-animate delay-100">
+                        <h3 class="text-xl font-bold">🌍 Simplified Planning</h3>
+                        <p class="mt-2 text-gray-600">Trips and events managed effortlessly.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-2xl text-center scroll-animate delay-200">
+                        <h3 class="text-xl font-bold">💡 Future-Proof</h3>
+                        <p class="mt-2 text-gray-600">The assistant grows smarter with use.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-2xl text-center scroll-animate delay-300">
+                        <h3 class="text-xl font-bold">✅ Shared To-Do Power</h3>
+                        <p class="mt-2 text-gray-600">Keep family shopping lists and tasks updated in real time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Market Opportunity -->
+        <section id="market" class="py-20 lg:py-28 px-6 bg-gray-50">
+             <div class="max-w-5xl mx-auto text-center">
+                 <h2 class="text-4xl font-bold scroll-animate">The Market is Ready for a Change</h2>
+                 <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600 scroll-animate delay-100">The fragmented app ecosystem has created strong demand for a unified, intelligent solution for modern families.</p>
+                 <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                     <div class="bg-white p-8 rounded-2xl shadow-lg scroll-animate delay-200">
+                        <p class="text-5xl font-bold text-indigo-600">$150B+</p>
+                        <p class="mt-3 text-gray-600">Spent annually by families on productivity, health, and organization tools.</p>
+                     </div>
+                     <div class="bg-white p-8 rounded-2xl shadow-lg scroll-animate delay-300">
+                        <p class="text-5xl font-bold text-indigo-600">28-45</p>
+                        <p class="mt-3 text-gray-600">Target age for tech-savvy parents seeking efficient solutions.</p>
+                     </div>
+                     <div class="bg-white p-8 rounded-2xl shadow-lg scroll-animate">
+                        <p class="text-5xl font-bold text-indigo-600">AI + Family</p>
+                        <p class="mt-3 text-gray-600">Positioned at the intersection of AI, Health, and Productivity.</p>
+                     </div>
+                 </div>
+             </div>
+        </section>
+        
+        <!-- Competitor Landscape -->
+        <section id="competitors" class="py-20 lg:py-28 px-6 bg-white">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold scroll-animate">A Clear Space to Innovate</h2>
+                    <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto scroll-animate delay-100">Competitors are either too narrow, too complex, or too expensive.</p>
+                </div>
+                <div class="overflow-x-auto scroll-animate delay-200">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="py-4 pr-4 border-b-2 font-bold">Competitor</th>
+                                <th class="py-4 px-4 border-b-2 font-bold">Weakness</th>
+                                <th class="py-4 pl-4 border-b-2 font-bold text-indigo-600">WeWere's Edge</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="py-4 pr-4 font-semibold">Cozi</td>
+                                <td class="py-4 px-4 text-gray-600">Traditional UI, menu-heavy</td>
+                                <td class="py-4 pl-4 text-gray-800">Minimalist, chat-only, zero friction</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-4 pr-4 font-semibold">MyDigiRecords</td>
+                                <td class="py-4 px-4 text-gray-600">Health-only, no organization</td>
+                                <td class="py-4 pl-4 text-gray-800">One assistant for health, notes & events</td>
+                            </tr>
+                             <tr class="border-b">
+                                <td class="py-4 pr-4 font-semibold">Yohana (Panasonic)</td>
+                                <td class="py-4 px-4 text-gray-600">Expensive, human-in-the-loop</td>
+                                <td class="py-4 pl-4 text-gray-800">Pure AI, affordable, infinitely scalable</td>
+                            </tr>
+                             <tr>
+                                <td class="py-4 pr-4 font-semibold">Other Apps</td>
+                                <td class="py-4 px-4 text-gray-600">Narrow focus or complex UX</td>
+                                <td class="py-4 pl-4 text-gray-800">Holistic, simple, and proactive</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                 <div class="mt-12 text-center bg-indigo-50 p-8 rounded-2xl scroll-animate delay-300">
+                     <h3 class="text-xl font-bold text-indigo-800">⚡ Key Takeaway</h3>
+                     <p class="mt-2 text-indigo-700 max-w-2xl mx-auto">WeWere is the first holistic, chat-based, and proactive AI assistant for families, creating a new category in a crowded market.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Model -->
+        <section id="model" class="py-20 lg:py-28 px-6 bg-gray-50">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-4xl font-bold scroll-animate">Simple & Transparent Business Model</h2>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg scroll-animate delay-200">
+                        <h3 class="text-2xl font-bold">Freemium</h3>
+                        <p class="mt-3 text-gray-600">Core features like shared notes, calendar, and reminders are free forever to drive widespread adoption and build a strong user base.</p>
+                    </div>
+                     <div class="bg-indigo-600 text-white p-8 rounded-2xl shadow-lg scroll-animate delay-300">
+                        <h3 class="text-2xl font-bold">Premium Subscription</h3>
+                         <p class="text-4xl font-bold mt-4">$9.99<span class="text-lg font-medium text-indigo-200">/mo per family</span></p>
+                        <p class="mt-3 text-indigo-100">Unlocks advanced features like Proactive Family Health, AI Trip Planning, and future integrations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Vision -->
+         <section id="vision" class="bg-white py-20 lg:py-28 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                 <h2 class="text-4xl font-bold scroll-animate">Our Vision</h2>
+                 <blockquote class="mt-8 text-2xl md:text-3xl font-medium text-gray-700 leading-snug scroll-animate delay-100">
+                     "To become the default AI assistant for families worldwide, building a platform where <span class="text-indigo-600">family context is the core asset</span>, and expanding into healthcare, education, and lifestyle services."
+                 </blockquote>
+            </div>
+        </section>
+
+        <!-- Founder -->
+        <section id="founder" class="bg-gray-50 py-20 lg:py-28 px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold scroll-animate">Meet the Founder</h2>
+                    <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto scroll-animate delay-100">WeWere is born from a unique combination of technical skill and personal need.</p>
+                </div>
+                <div class="bg-white p-8 md:p-12 rounded-2xl shadow-lg scroll-animate delay-200">
+                    <div class="text-center">
+                        <h3 class="text-3xl font-bold">Max Daibov</h3>
+                        <p class="text-indigo-600 font-semibold text-lg">Founder of WeWere</p>
+                    </div>
+                    <div class="mt-10 border-t pt-10 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
+                        <div>
+                            <h4 class="font-bold text-lg">🔧 Engineering Background</h4>
+                            <p class="text-gray-600 mt-1">12+ years in system design (heating, ventilation, water systems) and 6+ years in U.S. software QA & automation.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">🚀 Entrepreneurship Experience</h4>
+                            <p class="text-gray-600 mt-1">Built and validated an AI Barista Coffee Station and launched a live AI Resume Builder helping users today.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">🤖 AI & Automation Expertise</h4>
+                            <p class="text-gray-600 mt-1">Experienced in creating AI agents that improve efficiency and save significant time in complex workflows.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">✨ Unique Advantage</h4>
+                            <p class="text-gray-600 mt-1">Combines hardware entrepreneurship (AI Barista), software/AI development (Resume Builder), and real-life family insights.</p>
+                        </div>
+                    </div>
+                     <div class="mt-10 border-t pt-10 text-center">
+                         <p class="text-xl font-medium text-gray-800 italic leading-relaxed">"My vision is to make WeWere the world’s first chat-based AI Family Assistant, eliminating dashboards and menus to create a truly simple, proactive, and family-centered experience."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="cta" class="min-h-screen flex flex-col justify-center items-center p-6 text-center bg-white">
+            <div class="w-full max-w-3xl space-y-8">
+                <div class="text-center scroll-animate">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800">Ready to build the future of family tech?</h2>
+                    <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">Let's connect and simplify life for millions of families.</p>
+                </div>
+
+                 <div class="pt-8 text-center scroll-animate delay-200">
+                     <a href="mailto:daibovmaxim@gmail.com" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-xl shadow-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-transform transform hover:scale-105">
+                         Get in Touch
+                     </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-100 text-center p-6 border-t">
+        <p class="text-gray-600">&copy; 2025 WeWere. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.scroll-animate');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
+
